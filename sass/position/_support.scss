@@ -119,9 +119,11 @@ $pos-invalid-keyword-error: "Invalid Keyword Error";
           }
 
           $value: $next-item;
-        } @else {
-          $error: pos-throw-error( $pos-invalid-value-error, "`#{$item}` was followed by an invalid value; `{$value}`");
         }
+        // It will never reach here
+        // @else {
+          // $error: pos-throw-error( $pos-invalid-value-error, "`#{$item}` was followed by an invalid value; `{$value}`");
+        // }
 
         $offsets: map-merge($offsets, ($item: $value));
       } @else {
