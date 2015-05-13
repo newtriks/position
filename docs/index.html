@@ -520,9 +520,11 @@
           }
 
           $value: $next-item;
-        } @else {
-          $error: pos-throw-error( $pos-invalid-value-error, &quot;`#{$item}` was followed by an invalid value; `{$value}`&quot;);
         }
+        // It will never reach here
+        // @else {
+          // $error: pos-throw-error( $pos-invalid-value-error, &quot;`#{$item}` was followed by an invalid value; `{$value}`&quot;);
+        // }
 
         $offsets: map-merge($offsets, ($item: $value));
       } @else {
@@ -548,7 +550,7 @@
     data-collapsed="@function pos-parse-offsets($args) { ... }"><code>@function pos-parse-offsets($args) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L52-L146" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L52-L148" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -649,6 +651,194 @@ to an object of offset values.</p>
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-pos-is-keyword"><code>pos-is-keyword</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-parse-offsets-for-always-valueless"><code>pos-parse-offsets-for-always-valueless</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-throw-error"><code>pos-throw-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-parse-offsets-for-always-value"><code>pos-parse-offsets-for-always-value</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-is-valid-value"><code>pos-is-valid-value</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-orientation-for-support-valueless"><code>pos-orientation-for-support-valueless</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-parse-value-filter"><code>pos-parse-value-filter</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-always-valueless"><code>pos-always-valueless</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-unsupported-value-error"><code>pos-unsupported-value-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-always-value"><code>pos-always-value</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-invalid-value-error"><code>pos-invalid-value-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-missing-value-error"><code>pos-missing-value-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-support-valueless"><code>pos-support-valueless</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-invalid-keyword-error"><code>pos-invalid-keyword-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -657,6 +847,21 @@ to an object of offset values.</p>
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#mixin-position"><code>position</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -740,7 +945,7 @@ to an object of offset values.</p>
     data-collapsed="@function pos-position-is-valid($value) { ... }"><code>@function pos-position-is-valid($value) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L156-L158" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L158-L160" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -822,6 +1027,25 @@ to an object of offset values.</p>
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#variable-pos-accepted-position-values"><code>pos-accepted-position-values</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -830,6 +1054,21 @@ to an object of offset values.</p>
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#mixin-position"><code>position</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -913,7 +1152,7 @@ to an object of offset values.</p>
     data-collapsed="@function pos-is-keyword($value) { ... }"><code>@function pos-is-keyword($value) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L168-L170" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L170-L172" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -995,6 +1234,25 @@ to an object of offset values.</p>
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#variable-pos-keywords"><code>pos-keywords</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -1003,6 +1261,21 @@ to an object of offset values.</p>
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -1112,7 +1385,7 @@ to an object of offset values.</p>
     data-collapsed="@function pos-parse-offsets-for-always-valueless($offsets, $item) { ... }"><code>@function pos-parse-offsets-for-always-valueless($offsets, $item) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L183-L201" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L185-L203" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -1218,6 +1491,21 @@ to an object of offset values.</p>
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -1351,7 +1639,7 @@ to an object of offset values.</p>
     data-collapsed="@function pos-parse-offsets-for-always-value($offsets, $item, $item) { ... }"><code>@function pos-parse-offsets-for-always-value($offsets, $item, $item) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L216-L248" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L218-L250" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -1465,6 +1753,38 @@ to an object of offset values.</p>
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-pos-is-valid-value"><code>pos-is-valid-value</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-parse-value-filter"><code>pos-parse-value-filter</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -1473,6 +1793,21 @@ to an object of offset values.</p>
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -1560,7 +1895,7 @@ to an object of offset values.</p>
     data-collapsed="@function pos-orientation-for-support-valueless($item) { ... }"><code>@function pos-orientation-for-support-valueless($item) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L258-L264" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L260-L266" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -1650,6 +1985,21 @@ to an object of offset values.</p>
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -1751,7 +2101,7 @@ to an object of offset values.</p>
     data-collapsed="@function pos-throw-error($error, $message) { ... }"><code>@function pos-throw-error($error, $message) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L309-L319" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L311-L321" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -1844,6 +2194,15 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   
     
     
+  <h3 class="item__sub-heading">Throws</h3>
+
+  <ul class="list-unstyled">
+    
+      <li><h1 id="-error-message-">{$error} #{$message}</h1>
+</li>
+    
+  </ul>
+
 
   
     
@@ -1858,6 +2217,39 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#mixin-position"><code>position</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-pos-parse-value-filter"><code>pos-parse-value-filter</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -1951,7 +2343,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     data-collapsed="@function pos-parse-value-filter($value, $The) { ... }"><code>@function pos-parse-value-filter($value, $The) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L331-L333" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L333-L335" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -2049,6 +2441,38 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-pos-throw-error"><code>pos-throw-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#variable-pos-invalid-value-error"><code>pos-invalid-value-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -2057,6 +2481,30 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-pos-parse-offsets-for-always-value"><code>pos-parse-offsets-for-always-value</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -2142,7 +2590,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     data-collapsed="@function pos-is-valid-value($value) { ... }"><code>@function pos-is-valid-value($value) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L343-L347" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L345-L349" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -2224,6 +2672,51 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-pos-is-number-with-unit"><code>pos-is-number-with-unit</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-is-valid-unitless"><code>pos-is-valid-unitless</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-is-calc"><code>pos-is-calc</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -2232,6 +2725,30 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-pos-parse-offsets-for-always-value"><code>pos-parse-offsets-for-always-value</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -2315,7 +2832,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     data-collapsed="@function pos-is-number-with-unit($value) { ... }"><code>@function pos-is-number-with-unit($value) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L357-L359" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L359-L361" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -2405,6 +2922,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-is-valid-value"><code>pos-is-valid-value</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -2488,7 +3020,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     data-collapsed="@function pos-is-valid-unitless($value) { ... }"><code>@function pos-is-valid-unitless($value) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L369-L371" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L371-L373" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -2570,6 +3102,25 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#variable-pos-valid-unitless-values"><code>pos-valid-unitless-values</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -2578,6 +3129,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-is-valid-value"><code>pos-is-valid-value</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -2661,7 +3227,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     data-collapsed="@function pos-is-calc($value) { ... }"><code>@function pos-is-calc($value) { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L381-L383" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L383-L385" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -2751,6 +3317,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-is-valid-value"><code>pos-is-valid-value</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -2844,7 +3425,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
     data-collapsed="@mixin pos-render() { ... }"><code>@mixin pos-render() { ... }</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss#L274-L282" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L276-L284" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -2902,6 +3483,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#mixin-position"><code>position</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -2981,7 +3577,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   <pre class="item__code  language-scss"><code>$pos-accepted-position-values: fixed absolute relative static;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L11-L11" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3024,6 +3620,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-position-is-valid"><code>pos-position-is-valid</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3089,7 +3700,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   <pre class="item__code  language-scss"><code>$pos-always-valueless: fill fill-h fill-v;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L14-L14" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3132,6 +3743,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3197,7 +3823,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   <pre class="item__code  language-scss"><code>$pos-always-value: offset offset-h offset-v all;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L18-L18" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3240,6 +3866,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3305,7 +3946,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   <pre class="item__code  language-scss"><code>$pos-support-valueless: left right top bottom;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L21-L21" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3348,6 +3989,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3413,7 +4069,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   <pre class="item__code  language-scss"><code>$pos-keywords: join($pos-support-valueless, join($pos-always-valueless, $pos-always-value));</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L24-L24" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3456,6 +4112,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-is-keyword"><code>pos-is-keyword</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3521,7 +4192,7 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
   <pre class="item__code  language-scss"><code>$pos-valid-unitless-values: auto initial inherit 0;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L27-L27" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3564,6 +4235,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-is-valid-unitless"><code>pos-is-valid-unitless</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3626,10 +4312,10 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 <div class="relative  clear">
-  <pre class="item__code  language-scss"><code>$pos-missing-value-error: "Missing Value Error";</code></pre>
+  <pre class="item__code  language-scss"><code>$pos-missing-value-error: &quot;Missing Value Error&quot;;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L30-L30" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3672,6 +4358,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3734,10 +4435,10 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 <div class="relative  clear">
-  <pre class="item__code  language-scss"><code>$pos-unsupported-value-error: "Unsupported Value Error";</code></pre>
+  <pre class="item__code  language-scss"><code>$pos-unsupported-value-error: &quot;Unsupported Value Error&quot;;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L33-L33" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3780,6 +4481,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3842,10 +4558,10 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 <div class="relative  clear">
-  <pre class="item__code  language-scss"><code>$pos-invalid-keyword-error: "Invalid Keyword Error";</code></pre>
+  <pre class="item__code  language-scss"><code>$pos-invalid-keyword-error: &quot;Invalid Keyword Error&quot;;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L36-L36" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3888,6 +4604,21 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -3950,10 +4681,10 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 <div class="relative  clear">
-  <pre class="item__code  language-scss"><code>$pos-invalid-value-error: "Invalid Value Error";</code></pre>
+  <pre class="item__code  language-scss"><code>$pos-invalid-value-error: &quot;Invalid Value Error&quot;;</code></pre>
 
   
-    <a href="https://github.com/Undistraction/position/position/_support.scss" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/Undistraction/position/position/_support.scss#L292-L292" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -3996,6 +4727,30 @@ with the error saved to <code>$pos-last-error</code> instead so tests can check 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-pos-parse-value-filter"><code>pos-parse-value-filter</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -4258,6 +5013,64 @@ zero. <code>fill-h</code> will set the <code>left</code> and <code>right</code> 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#mixin-pos-render"><code>pos-render</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-position-is-valid"><code>pos-position-is-valid</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-throw-error"><code>pos-throw-error</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-pos-parse-offsets"><code>pos-parse-offsets</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -4266,6 +5079,48 @@ zero. <code>fill-h</code> will set the <code>left</code> and <code>right</code> 
 
 
 
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#mixin-absolute"><code>absolute</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#mixin-fixed"><code>fixed</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#mixin-relative"><code>relative</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#mixin-static"><code>static</code></a></li>
+  
+
+
+
+
+</ul>
 
 
   
@@ -4420,6 +5275,25 @@ zero. <code>fill-h</code> will set the <code>left</code> and <code>right</code> 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#mixin-position"><code>position</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -4596,6 +5470,25 @@ zero. <code>fill-h</code> will set the <code>left</code> and <code>right</code> 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#mixin-position"><code>position</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -4772,6 +5665,25 @@ zero. <code>fill-h</code> will set the <code>left</code> and <code>right</code> 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#mixin-position"><code>position</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
@@ -4910,6 +5822,25 @@ zero. <code>fill-h</code> will set the <code>left</code> and <code>right</code> 
     
 
 
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#mixin-position"><code>position</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
 
 
   
